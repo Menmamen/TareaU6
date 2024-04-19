@@ -5,7 +5,7 @@ Este proyecto es un editor de texto desarrollado en Java como parte de la Unidad
 ## Cómo usar el editor
 
 1. **Ejecución del programa:**
-    - Ejecuta el método `main()` en la clase [`Editor`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java) para iniciar la aplicación.
+    - Ejecuta el método [`main()`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L429) en la clase [`Editor`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java) para iniciar la aplicación.
 
 2. **Interfaz de usuario:**
     - Una vez abierto el editor, encontrarás una variedad de opciones en la parte superior para manipular el texto, cambiar el formato y el color, y activar el modo oscuro.
