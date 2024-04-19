@@ -26,16 +26,13 @@ public class Editor extends JFrame implements ActionListener {
     private Integer[] sizes = new Integer[40];
 
 
-
-
-
     public Editor() {
         setTitle("Editor de Texto");
-        setSize(790,610);
+        setSize(950, 650);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         fondo = new JPanel();
         fondo.setBackground(new java.awt.Color(204, 187, 187));
-        fondo.setLayout(new FlowLayout ( FlowLayout.LEFT ));
+        fondo.setLayout(new FlowLayout(FlowLayout.LEFT));
         add(fondo);
         fondo.add(marco1);//lo añado antes de los botones para que se alinee el marco con el marco de la ventana
 
@@ -71,9 +68,9 @@ public class Editor extends JFrame implements ActionListener {
 
         //Añadimos los tamaños de fuente
         int s = 2;
-        for (int i = 0; i < sizes.length; i++){
+        for (int i = 0; i < sizes.length; i++) {
             sizes[i] = s;
-            s+=2;
+            s += 2;
         }
 
         tamanyo = new JComboBox(sizes);
@@ -117,11 +114,13 @@ public class Editor extends JFrame implements ActionListener {
 
 
     }
-    public void actionPerformed(ActionEvent e){
+
+    public void actionPerformed(ActionEvent e) {
 
     }
-    private class ModOscuro implements ActionListener{
-        public void actionPerformed(ActionEvent e){
+
+    private class ModOscuro implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
             // Obtener el documento de estilo del JTextPane
             StyledDocument doc = box.getStyledDocument();
 
@@ -133,18 +132,51 @@ public class Editor extends JFrame implements ActionListener {
             Color colorfondo = box.getBackground();
             boolean esOscuro = colorfondo.equals(Color.black);
 
-            if(esOscuro == true){
+            if (esOscuro == true) {
                 // Cambiamos el fondo a blanco y el texto a negro
                 StyleConstants.setForeground(attrs, Color.black);
                 box.setBackground(Color.white);
                 // Aplicar el estilo al texto
                 doc.setCharacterAttributes(0, doc.getLength(), attrs, false);
-            }else {
+                //Cambiar el color de los paneles al original
+                fondo.setBackground(new java.awt.Color(204, 187, 187));
+                marco1.setBackground(new java.awt.Color(204, 187, 187));
+                marco2.setBackground(new java.awt.Color(204, 187, 187));
+                marco3.setBackground(new java.awt.Color(204, 187, 187));
+                //Cambiar el color de los botones y combos al original
+                negr.setBackground(new java.awt.Color(255, 255, 255));
+                curs.setBackground(new java.awt.Color(255, 255, 255));
+                subr.setBackground(new java.awt.Color(255, 255, 255));
+                subindice.setBackground(new java.awt.Color(255, 255, 255));
+                superindice.setBackground(new java.awt.Color(255, 255, 255));
+                formato.setBackground(new java.awt.Color(255, 255, 255));
+                tamanyo.setBackground(new java.awt.Color(255, 255, 255));
+                color.setBackground(new java.awt.Color(255, 255, 255));
+                modOscuro.setBackground(new java.awt.Color(255, 255, 255));
+
+
+            } else {
                 // Cambiamos el fondo a negro y el texto a blanco
                 StyleConstants.setForeground(attrs, Color.white);
                 box.setBackground(Color.black);
                 // Aplicar el estilo al texto
                 doc.setCharacterAttributes(0, doc.getLength(), attrs, false);
+                // Cambiar el color de los paneles a gris oscuro
+                fondo.setBackground(new java.awt.Color(77, 77, 77));
+                marco1.setBackground(new java.awt.Color(77, 77, 77));
+                marco2.setBackground(new java.awt.Color(77, 77, 77));
+                marco3.setBackground(new java.awt.Color(77, 77, 77));
+                //Cambiar el color de los botones y combos a gris
+                negr.setBackground(new java.awt.Color(140, 140, 140));
+                curs.setBackground(new java.awt.Color(140, 140, 140));
+                subr.setBackground(new java.awt.Color(140, 140, 140));
+                subindice.setBackground(new java.awt.Color(140, 140, 140));
+                superindice.setBackground(new java.awt.Color(140, 140, 140));
+                formato.setBackground(new java.awt.Color(140, 140, 140));
+                tamanyo.setBackground(new java.awt.Color(140, 140, 140));
+                color.setBackground(new java.awt.Color(140, 140, 140));
+                modOscuro.setBackground(new java.awt.Color(140, 140, 140));
+
             }
 
 
@@ -180,7 +212,9 @@ public class Editor extends JFrame implements ActionListener {
             doc.setCharacterAttributes(start, end - start, style, false);
         }
 
-    }private class CursListener implements ActionListener {
+    }
+
+    private class CursListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Obtener la selección actual
             int start = box.getSelectionStart();
@@ -192,6 +226,7 @@ public class Editor extends JFrame implements ActionListener {
             // Crear un nuevo estilo
             Style style = doc.addStyle("Cursiva", null);
 
+            /* Intenté aplicarlo por defecto si no había texto seleccionado pero no he dado con la logica adecuada
             if (end-start == 0) {
                 MutableAttributeSet attrs = box.getInputAttributes();
                 boolean esCursiva = StyleConstants.isItalic(attrs);
@@ -202,28 +237,29 @@ public class Editor extends JFrame implements ActionListener {
                 doc.setCharacterAttributes(0, doc.getLength(), attrs, false);
 
             }else{
-                // Verificar si el texto seleccionado está en cursiva
-                AttributeSet atributos = doc.getCharacterElement(start).getAttributes();
-                boolean esCursiva = StyleConstants.isItalic(atributos);
 
-                // Alternar el estilo de negrita
-                if (esCursiva) {
-                    // Si el texto seleccionado está en cursiva, quitar el estilo de cursiva
-                    StyleConstants.setItalic(style, false);
-                } else {
-                    // Si el texto seleccionado no está en cursiva, aplicar el estilo de cursiva
-                    StyleConstants.setItalic(style, true);
-                }
+             */
+            // Verificar si el texto seleccionado está en cursiva
+            AttributeSet atributos = doc.getCharacterElement(start).getAttributes();
+            boolean esCursiva = StyleConstants.isItalic(atributos);
 
-                // Aplicar el estilo al texto seleccionado
-                doc.setCharacterAttributes(start, end - start, style, false);
+            // Alternar el estilo de negrita
+            if (esCursiva) {
+                // Si el texto seleccionado está en cursiva, quitar el estilo de cursiva
+                StyleConstants.setItalic(style, false);
+            } else {
+                // Si el texto seleccionado no está en cursiva, aplicar el estilo de cursiva
+                StyleConstants.setItalic(style, true);
             }
 
+            // Aplicar el estilo al texto seleccionado
+            doc.setCharacterAttributes(start, end - start, style, false);
 
 
         }
 
     }
+
     private class SubrListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Obtener la selección actual
@@ -254,6 +290,7 @@ public class Editor extends JFrame implements ActionListener {
         }
 
     }
+
     private class SubindiceListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Obtener la selección actual
@@ -284,6 +321,7 @@ public class Editor extends JFrame implements ActionListener {
         }
 
     }
+
     private class SuperindiceListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Obtener la selección actual
@@ -327,20 +365,18 @@ public class Editor extends JFrame implements ActionListener {
             AttributeSet attr = doc.getCharacterElement(start).getAttributes();
             // Obtener la fuente actual del texto seleccionado
             String fuenteActual = StyleConstants.getFontFamily(attr);
-            int tamanoActual = StyleConstants.getFontSize(attr);
 
             // Crear un nuevo estilo
             Style style = doc.addStyle("cambioFuente", null);
 
             // Aplicar el estilo al texto seleccionado
             String selectedFont = (String) formato.getSelectedItem();
-            //Font nuevaFuente = new Font(selectedFont, Font.PLAIN, tamanoActual);
             StyleConstants.setFontFamily(style, selectedFont);
-            StyleConstants.setFontSize(style, tamanoActual);
             doc.setCharacterAttributes(start, end - start, style, false);
         }
 
     }
+
     private class TamanyoListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Obtener la selección actual
@@ -352,7 +388,6 @@ public class Editor extends JFrame implements ActionListener {
             // Obtener el estilo actual del texto seleccionado
             AttributeSet attr = doc.getCharacterElement(start).getAttributes();
             // Obtener la fuente actual del texto seleccionado
-            String fontName = StyleConstants.getFontFamily(attr);
             int fontSize = StyleConstants.getFontSize(attr);
 
             // Crear un nuevo estilo
@@ -396,7 +431,6 @@ public class Editor extends JFrame implements ActionListener {
         editor.setResizable(true);
         editor.setVisible(true);
     }
-
 
 
 }
