@@ -5,7 +5,7 @@ Este proyecto es un editor de texto desarrollado en Java como parte de la Unidad
 ## Cómo usar el editor
 
 1. **Ejecución del programa:**
-    - Ejecuta el método `main()` en la clase `Editor` para iniciar la aplicación.
+    - Ejecuta el método `main()` en la clase [`Editor`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java) para iniciar la aplicación.
 
 2. **Interfaz de usuario:**
     - Una vez abierto el editor, encontrarás una variedad de opciones en la parte superior para manipular el texto, cambiar el formato y el color, y activar el modo oscuro.
@@ -17,18 +17,17 @@ Este proyecto es un editor de texto desarrollado en Java como parte de la Unidad
     - **Modo oscuro:** Activa o desactiva el modo oscuro haciendo clic en el botón correspondiente.
 
 4. **Clases internas:**
-    - Para ver el código y detalles de cada clase interna, puedes dirigirte a las siguientes secciones del archivo Java:
-        - `ModOscuro`: Controla el modo oscuro del editor.
-        - `NegrListener`: Maneja eventos para aplicar negrita al texto.
-        - `CursListener`: Maneja eventos para aplicar cursiva al texto.
-        - `SubrListener`: Maneja eventos para aplicar subrayado al texto.
-        - `SubindiceListener`: Maneja eventos para aplicar subíndice al texto.
-        - `SuperindiceListener`: Maneja eventos para aplicar superíndice al texto.
-        - `FormatoListener`: Maneja eventos para cambiar la fuente del texto.
-        - `TamanyoListener`: Maneja eventos para cambiar el tamaño de la fuente del texto.
-        - `ColorListener`: Maneja eventos para cambiar el color del texto.
-
-
+   - Para ver el código y detalles de cada clase interna, puedes dirigirte a las siguientes secciones del archivo Java:
+      - [`ModOscuro`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L122): Controla el modo oscuro del editor.
+      - [`NegrListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L186): Maneja eventos para aplicar negrita al texto.
+      - [`CursListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L217): Maneja eventos para aplicar cursiva al texto.
+      - [`SubrListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L263): Maneja eventos para aplicar subrayado al texto.
+      - [`SubindiceListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L294): Maneja eventos para aplicar subíndice al texto.
+      - [`SuperindiceListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L325): Maneja eventos para aplicar superíndice al texto.
+      - [`FormatoListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L356): Maneja eventos para cambiar la fuente del texto.
+      - [`TamanyoListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L380): Maneja eventos para cambiar el tamaño de la fuente del texto.
+      - [`ColorListener`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L404): Maneja eventos para cambiar el color del texto.
+      - [`Main`](https://github.com/Menmamen/TareaU6/blob/3cb8602feb5f451175c03afb6dc41b586181a1cb/src/main/java/proyectoFinal/Editor.java#L429): Inicializa el programa y define los parámetros de la ventana.
 ## Dependencias y requisitos
 
 - Este proyecto ha sido desarrollado en Java y requiere un entorno de ejecución Java (JRE) para ejecutarse correctamente.
